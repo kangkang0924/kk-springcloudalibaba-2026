@@ -3,6 +3,8 @@ package com.tulingxueyuan.order;
 import com.tulingxueyuan.order.controller.OrderController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * @@Slogan 致敬大师，致敬未来的你
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class OrderApplication {
 
     public static void main(String[] args) {
@@ -18,6 +21,7 @@ public class OrderApplication {
     }
 
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

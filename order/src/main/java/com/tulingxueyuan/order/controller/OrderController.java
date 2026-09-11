@@ -22,7 +22,8 @@ public class OrderController {
     // 插入订单信息
     @RequestMapping("/add")
     public String add(){
-        restTemplate.getForObject("http://127.0.0.1:8011/stock/reduct",String.class);
-        return "下单成功";
+        String forObject = restTemplate.getForObject("http://stock-server/stock/reduct", String.class);
+        System.out.println("成功下单");
+        return forObject;
     }
 }
