@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!--网关配置        -->
         <!--gateway-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
