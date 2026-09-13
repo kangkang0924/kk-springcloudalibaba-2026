@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.xs</groupId>
-        <artifactId>xs-springcloudalibaba</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>kk-springcloudalibaba</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.xs</groupId>
     <artifactId>gatewaty</artifactId>

@@ -9,11 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xs</groupId>
-    <artifactId>xs-springcloudalibaba</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>xs-springcloudalibaba</name>
-    <description>xs-springcloudalibaba</description>
+    <artifactId>kk-springcloudalibaba</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>kk-springcloudalibaba</name>
+    <description>kk-springcloudalibaba</description>
+
 
     <modules>
         <module>order</module>

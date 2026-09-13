@@ -4,6 +4,7 @@ import com.tulingxueyuan.order.feignService.StockFeignService;
 import com.tulingxueyuan.order.mapper.OrderMapper;
 import com.tulingxueyuan.order.pojo.Order;
 import com.tulingxueyuan.order.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +31,8 @@ public class OrderServiceImpl implements OrderService {
      * @return
      */
     @Override
-    @Transactional
+    //@Transactional
+    @GlobalTransactional
     public Order create(Order order) {
         // 插入能否成功？
         orderMapper.insert(order);
