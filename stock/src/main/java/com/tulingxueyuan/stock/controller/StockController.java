@@ -1,6 +1,9 @@
 package com.tulingxueyuan.stock.controller;
 
+import com.tulingxueyuan.stock.service.StockService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
@@ -12,9 +15,12 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/stock")
 public class StockController {
+    @Autowired
+    StockService stockSerivce;
 
     @RequestMapping("/reduct")
-    public String reduct() throws InterruptedException {
+    public String reduct(@RequestParam(value = "productId")Integer productId) throws InterruptedException {
+        stockSerivce.reduct(productId);
         TimeUnit.SECONDS.sleep(1);
         System.out.println("扣减库存");
         return "扣减库存";
