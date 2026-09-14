@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: integrated-consumer
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+    stream:
+      function:
+        definition: consumer;
+      bindings:
+        consumer-in-0:
+          destination: PRAISE-TOPIC-01
+          content-type: application/json
+          group: praise-consumer-group-PRAISE-TOPIC-01
+
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+        bindings:
+          consumer-in-0:
+            consumer:
+              pullInterval: 4000
+              pullBatchSize: 4
+  config:
+    import: optional:nacos:integrated-provider.yaml
+
+server:
+  port: 8014

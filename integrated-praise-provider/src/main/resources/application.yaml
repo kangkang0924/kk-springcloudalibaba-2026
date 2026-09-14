@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: integrated-provider
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+    stream:
+      bindings:
+        praise-output:                  # 消息通道名称（逻辑名称）
+          destination: PRAISE-TOPIC-01  # 消息发送的目标 RocketMQ Topic
+          content-type: application/json # 消息内容类型，表示采用 JSON 格式进行序列化
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+        bindings:
+          praise-output:
+            producer:
+              group: test
+
+  config:
+    import: optional:nacos:integrated-provider.yaml
+
+server:
+  port: 8015
+
+
