@@ -41,4 +41,10 @@ public class OrderController {
         orderService.create(order);
         return "下单成功";
     }
+
+    @RequestMapping("/test")
+    public String test() throws InterruptedException {
+        Thread.sleep(2000);
+        return "下单成功";
+    }
 }
