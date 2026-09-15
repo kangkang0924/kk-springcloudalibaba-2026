@@ -22,6 +22,7 @@
         <module>gatewaty</module>
         <module>integrated-praise-consumer</module>
         <module>integrated-praise-provider</module>
+        <module>custom</module>
     </modules>
 
     <properties>
