@@ -19,6 +19,9 @@
     <modules>
         <module>order</module>
         <module>stock</module>
+        <module>gatewaty</module>
+        <module>integrated-praise-consumer</module>
+        <module>integrated-praise-provider</module>
     </modules>
 
     <properties>
